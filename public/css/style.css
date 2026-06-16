@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap');
+
+/* ==================== GLOBAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    min-height: 100vh;
+    background-color: #1a0e05;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Overlay gelap di atas background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 8, 2, 0.75);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Semua konten harus di atas overlay */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    background: tranparent;
+    border-bottom: 2px solid #c8964a;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-logo {
+    color: #c8964a;
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.header-logo span {
+    color: #f0deb4;
+    font-size: 12px;
+    display: block;
+    letter-spacing: 4px;
+    margin-top: 2px;
+}
+
+.header-ornament {
+    color: #5a3a1a;
+    font-size: 20px;
+    letter-spacing: 8px;
+}
+
+.header-back {
+    background: transparent;
+    border: 1px solid #5a3a1a;
+    color: #a08060;
+    padding: 8px 18px;
+    font-family: 'Noto Serif', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.header-back:hover {
+    border-color: #c8964a;
+    color: #c8964a;
+}
+
+/* ==================== CARD ==================== */
+.card {
+    background: transparent;
+    border: 1px solid #5a3a1a;
+    border-radius: 4px;
+    padding: 28px 32px;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+/* Sudut emas di card */
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: #c8964a;
+    border-style: solid;
+}
+
+.card::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+}
+
+.card::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+}
+
+.card-title {
+    color: #c8964a;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #5a3a1a, transparent);
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.container-sm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* ==================== TABEL ==================== */
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid #5a3a1a;
+    border-radius: 2px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.table th {
+    background: rgba(61, 31, 15, 0.9);
+    color: #c8964a;
+    padding: 12px 16px;
+    text-align: left;
+    letter-spacing: 2px;
+    font-size: 11px;
+    border-bottom: 1px solid #5a3a1a;
+    white-space: nowrap;
+}
+
+.table td {
+    color: #f0deb4;
+    padding: 11px 16px;
+    border-bottom: 1px solid rgba(90, 58, 26, 0.4);
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover td {
+    background: rgba(200, 150, 74, 0.05);
+}
+
+/* ==================== TOMBOL ==================== */
+.btn-hapus {
+    background: #8b2020;
+    border: none;
+    color: #f0deb4;
+    padding: inherit;
+    font-size: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-hapus:hover {
+    background: #a03030;
+}
+
+.btn-ubah {
+    background: #3d5a1f;
+    border: none;
+    color: #c8e87a;
+    padding: inherit;
+    font-size: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-ubah:hover {
+    background: #4e7228;
+}
+
+.btn-tambah {
+    background: transparent;
+    border: 1px solid #c8964a;
+    color: #c8964a;
+    padding: 8px 20px;
+    font-family: 'Noto Serif', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+    margin-bottom: 16px;
+    
+}
+
+.btn-tambah:hover {
+    background: #c8964a;
+    color: #1a0e05;
+}
+
+.btn-submit {
+    background: #8b2020;
+    border: 1px solid #c8964a;
+    color: #f0deb4;
+    padding: 10px 28px;
+    font-family: 'Noto Serif', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: block;
+    margin: 30px auto 0px;
+}
+
+.btn-submit:hover {
+    background: #c8964a;
+    color: #1a0e05;
+}
+
+/* ==================== FORM ==================== */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    color: #a08060;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.form-input,
+.form-select {
+    background: rgba(15, 8, 2, 0.8);
+    border: 1px solid #5a3a1a;
+    color: #f0deb4;
+    padding: 10px 14px;
+    font-family: 'Noto Serif', serif;
+    font-size: 13px;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #c8964a;
+}
+
+.form-select option {
+    background: #2d1a0e;
+    color: #f0deb4;
+}
+
+/* ==================== DIVIDER ==================== */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: #5a3a1a;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #5a3a1a;
+}
+
+/* ==================== ALERT ==================== */
+.alert-error {
+    background: rgba(139, 32, 32, 0.3);
+    border: 1px solid #8b2020;
+    color: #f0deb4;
+    padding: 10px 16px;
+    border-radius: 2px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.alert-success {
+    background: rgba(61, 90, 31, 0.3);
+    border: 1px solid #3d5a1f;
+    color: #c8e87a;
+    padding: 10px 16px;
+    border-radius: 2px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
